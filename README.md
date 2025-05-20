@@ -63,7 +63,7 @@ Data processing and analysis scripts:
 
 ```bash
 git clone https://github.com/calmasri7/ML-Protein-DNA-Binding-Affinity.git
-cd MMGBSA_ML_Project
+cd ML-Protein-DNA-Binding-Affinity
 ```
 
 ### 2. Setup environment
@@ -131,15 +131,15 @@ channels:
   - conda-forge
   - defaults
 dependencies:
-  - python=3.9.21
-  - numpy=1.20.0
+  - python=3.9          
+  - numpy>=1.24,<1.27  
   - pandas=1.3.5
-  - scipy=1.7.3
-  - scikit-learn=1.1.3
+  - scipy=1.10         
+  - scikit-learn=1.3   
+  - shap=0.47.2        
   - matplotlib=3.7.3
   - seaborn=0.13.2
   - plotly=5.17.0
-  - shap=0.44.1
   - joblib=1.4.2
   - selenium=4.27.1
   - webdriver-manager=4.0.2
@@ -150,7 +150,7 @@ dependencies:
   - gromacs=2022.1
 ```
 
-NACCESS needs to be installed, check http://www.bioinf.manchester.ac.uk/naccess/
+NACCESS also needs to be installed, available on http://www.bioinf.manchester.ac.uk/naccess/
 
 ## Contact
 
