@@ -122,6 +122,7 @@ For further details, refer to individual directory READMEs.
 | pyspark           | 3.5.4   |
 | AmberTools        | 21.12   |
 | GROMACS           | 2022.1  |
+| jupyterlab        | 4.2.1   |
 
 ## environment.yml
 
@@ -148,6 +149,7 @@ dependencies:
   - pyspark=3.5.4
   - ambertools=21.12
   - gromacs=2022.1
+  - jupyterlab=4.2
 ```
 
 NACCESS also needs to be installed, available on http://www.bioinf.manchester.ac.uk/naccess/
