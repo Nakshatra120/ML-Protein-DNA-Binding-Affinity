@@ -63,7 +63,7 @@ Data processing and analysis scripts:
 
 ```bash
 git clone https://github.com/calmasri7/ML-Protein-DNA-Binding-Affinity.git
-cd MMGBSA_ML_Project
+cd ML-Protein-DNA-Binding-Affinity
 ```
 
 ### 2. Setup environment
