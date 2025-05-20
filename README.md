@@ -150,7 +150,7 @@ dependencies:
   - gromacs=2022.1
 ```
 
-NACCESS needs to be installed, check http://www.bioinf.manchester.ac.uk/naccess/
+NACCESS also needs to be installed, available on http://www.bioinf.manchester.ac.uk/naccess/
 
 ## Contact
 
