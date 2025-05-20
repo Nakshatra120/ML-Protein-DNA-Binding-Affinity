@@ -131,15 +131,15 @@ channels:
   - conda-forge
   - defaults
 dependencies:
-  - python=3.9.21
-  - numpy=1.20.0
+  - python=3.9          
+  - numpy>=1.24,<1.27  
   - pandas=1.3.5
-  - scipy=1.7.3
-  - scikit-learn=1.1.3
+  - scipy=1.10         
+  - scikit-learn=1.3   
+  - shap=0.47.2        
   - matplotlib=3.7.3
   - seaborn=0.13.2
   - plotly=5.17.0
-  - shap=0.44.1
   - joblib=1.4.2
   - selenium=4.27.1
   - webdriver-manager=4.0.2
