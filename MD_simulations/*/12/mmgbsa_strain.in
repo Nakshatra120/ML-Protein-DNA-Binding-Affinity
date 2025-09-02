@@ -1,0 +1,22 @@
+# Input file for MMGBSA calculation using AMBER’s MMPBSA.py
+# ----------------------------------------------------------
+
+&general
+  sys_name="Prot-DNA",     # System name
+  verbose=2,               # Verbosity level (0=minimal, 2=standard, 5=debug)
+  #startframe=100,         # (Optional) First trajectory frame to include
+  #endframe=200,           # (Optional) Last trajectory frame to include
+  PBRadii=4                # Intrinsic Born radii set (e.g., mbondi2)
+/
+
+&gb
+  igb=8,                   # GB model: OBC2 (Onufriev–Bashford–Case II)
+  saltcon=0.150,           # Salt concentration in mol/L
+  intdiel=10,              # Internal dielectric constant
+  maxcyc=1                 # Number of cycles in GB solve per frame
+/
+
+&decomp
+  dec_verbose=3,           # Level of detail in pairwise decomposition output
+  idecomp=2                # Decomposition type: per-residue pairwise ΔG  (2=pairwise)
+/
