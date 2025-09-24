@@ -123,6 +123,22 @@ Follow the original script order (as applicable to your compute environment):
 
 ---
 
+## Additional Documentation & Tutorials
+
+Alongside the notebooks in this repository, we maintain a collection of **step-by-step tutorial documents** (Word/PDF) that expand on various parts of the original Carmen Al Masri pipeline.  
+
+**Full documentation folder on Google Drive:**  
+[Protein–DNA Binding ML Tutorials (Google Drive)](https://drive.google.com/drive/folders/1-VZr-uEI5vbdHhD7oE_DEY3p4iczt1As?usp=sharing)
+
+These documents include:
+- gcPBM processing (end-to-end)
+- Linear Regression, Random Forest, SVM, and Neural Network pipelines
+- Stratification and sampling tutorials
+- Model run scripts (RF, NN, etc.)
+- Expanded notes on logic and preprocessing steps
+
+---
+
 ## Citation
 
 If your work builds on this repository, please **cite both** the original preprint and this extension:
