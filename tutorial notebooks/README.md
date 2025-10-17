@@ -12,10 +12,10 @@ This folder provides step-by-step tutorials that demonstrate how to:
 ## Files
 
 - **exp_data_all.csv**  
-  Experimental protein–DNA binding affinity measurements.
+  Experimental protein–DNA binding affinity measurements (reference data).
 
 - **rawdat.csv**  
-  Computed/processed features from simulations and energy terms.
+  Computed/processed features from simulations and energy terms (feature data).
 
 - **merged.csv**  
   Data after joining experimental and computed features.
