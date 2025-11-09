@@ -1,0 +1,9 @@
+{
+  "keep_last_percent": 90.0,
+  "navg": 280,
+  "n_estimators": 300,
+  "max_depth": 10,
+  "max_features": "sqrt",
+  "min_samples_split": 50,
+  "min_samples_leaf": 20
+}
