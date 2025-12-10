@@ -27,9 +27,12 @@ tutorial notebooks/
     neural_network/
         NN_regression_tutorial.ipynb
         NN_binary_tutorial.ipynb
+    
+    data/             
+    models/          
 ```
 
-The main repository additionally contains:
+The main repository also additionally contains:
 
 ```
 data/               Input features, targets, processed datasets
