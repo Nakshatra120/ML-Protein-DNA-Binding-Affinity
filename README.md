@@ -9,14 +9,9 @@ The purpose of this repository is to make the original pipeline more accessible 
 
 ## Credits
 
-The original dataset preparation, pipeline scripts, and overall project design were developed by **Carmen Masri and Jin Yu**,  
-*Journal of Chemical Information and Modeling* **2025**, 65 (21), 11804–11817.  
-https://doi.org/10.1021/acs.jcim.5c01143
+The original dataset preparation, pipeline scripts, and overall project design were developed by Carmen Masri and Jin Yu, J. Chem. Inf. Model. 2025, 65, 21, 11804–11817 https://doi.org/10.1021/acs.jcim.5c01143 from the **Jin Yu Lab** at UC Irvine https://sites.uci.edu/jinyulab/.
 
-This work originates from the **Jin Yu Lab**, University of California, Irvine:  
-https://sites.uci.edu/jinyulab/
-
-This tutorial section was written, structured, and designed by **Nakshatra Bansal** to provide clearer documentation and to guide new users through the modeling process, in collaboration with the Jin Yu Lab.
+This tutorial section was written, structured, and designed by **Nakshatra Bansal** and Jin Yu lab to provide clearer documentation and to guide new users through the modeling process.
 
 ---
 
