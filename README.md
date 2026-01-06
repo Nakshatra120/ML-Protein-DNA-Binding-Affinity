@@ -1,23 +1,32 @@
-# Physics-Informed ML for Protein–DNA Binding (Myc/Max) — Extended with Time-Dependent Models & Tutorials
+# Tutorials for Physics-Based ML of Protein–DNA Binding (Myc/Max)
 
-This repository extends the original **Combining Physics-Based Protein–DNA Energetics with Machine Learning** project by integrating the same MMGBSA-derived, physically interpretable features with additional ML pipelines, including **time-dependent / sequence-context models**, and by providing **beginner-friendly tutorial notebooks** for reproducibility.
+This repository provides **tutorials and documentation** for the project  
+**Combining Physics-Based Protein–DNA Energetics with Machine Learning**, which integrates MMGBSA-derived, physically interpretable features with machine-learning models to predict protein–DNA binding affinities in the Myc/Max system.
 
-> **Provenance & Attribution**
->
-> This codebase began as a fork of Carmen Al Masri’s repository:
->
-> * Original repo: [https://github.com/calmasri7/ML-Protein-DNA-Binding-Affinity](https://github.com/calmasri7/ML-Protein-DNA-Binding-Affinity)
-> * Preprint: *Al Masri C, Yu J. Combining Physics-Based Protein–DNA Energetics with Machine Learning to Predict Interpretable Transcription Factor–DNA Binding. ChemRxiv (2025).*
->
-> As my development diverged (new model families, data handling, and a tutorials track), I **unforked** to avoid confusion about scope and maintenance responsibility while preserving full attribution to the original work.
+The purpose of this repository is to make the original pipeline more accessible and reproducible for new users through guided notebooks and organized examples.
 
 ---
 
-## What’s new in this repository
+## Credits
 
-* **Time-dependent / context-aware models:** additional pipelines beyond the original SVM/RF/NN/REG baselines.
-* **`tutorial notebooks/`**: step-by-step Jupyter notebooks to load data, merge computed and experimental features, run EDA, and train baseline models without digging into internal scripts.
-* **Reorganized ML directories** and helper scripts to simplify k-fold splits, feature prep, and reproducible training.
+The original dataset preparation, pipeline scripts, and overall project design were developed by **Carmen Masri and Jin Yu**,  
+*Journal of Chemical Information and Modeling* **2025**, 65 (21), 11804–11817.  
+https://doi.org/10.1021/acs.jcim.5c01143
+
+This work originates from the **Jin Yu Lab**, University of California, Irvine:  
+https://sites.uci.edu/jinyulab/
+
+This tutorial section was written, structured, and designed by **Nakshatra Bansal** to provide clearer documentation and to guide new users through the modeling process, in collaboration with the Jin Yu Lab.
+
+---
+
+## What this tutorial repository provides
+
+* **Beginner-friendly tutorial notebooks** that walk through data loading, feature merging, exploratory analysis, and baseline model training.
+* A **lightweight, reproducible entry point** that mirrors the full pipeline at a smaller scale.
+* Organized examples that help users understand how computed MMGBSA features connect to experimental binding data.
+
+This repository is intended for **learning, onboarding, and reproducibility**, rather than for introducing new scientific methodology.
 
 ---
 
@@ -37,13 +46,64 @@ ML-Protein-DNA-Binding-Affinity/
 └── tutorial notebooks/            <-- New: guided, beginner-friendly entry point
 ```
 
-### `tutorial notebooks/` (start here if you’re new)
 
-* `walkthrough_notebook.ipynb` – load/merge datasets, quick EDA, baseline model
-* `plot.ipynb` – visualizations & correlations
-* `rawdat.csv`, `exp_data_all.csv`, `merged.csv` – minimal data artifacts for tutorials
+---
 
-> The tutorials mirror the full pipeline at a smaller scale so new users can reproduce key results quickly.
+## Tutorials (recommended starting point)
+
+The **`tutorial notebooks/`** directory contains step-by-step Jupyter notebooks designed to run quickly and demonstrate the core ideas of the pipeline.
+
+Key files include:
+* `walkthrough_notebook.ipynb` – load and merge datasets, perform basic EDA, train a baseline model
+* `plot.ipynb` – visualization and correlation analysis
+* `rawdat.csv`, `exp_data_all.csv`, `merged.csv` – minimal datasets for tutorial use
+
+These tutorials reproduce key components of the full workflow without requiring HPC resources.
+
+---
+
+## Full pipeline (advanced users)
+
+Users who wish to run the complete pipeline may follow the original workflow, depending on their compute environment:
+
+1. `scripts/process_gcPBM.ipynb`
+2. `scripts/Mutate_PDB_w3dna.ipynb`
+3. Molecular dynamics and MMGBSA calculations:
+   * `MD_simulations/1_run_MD.sh`
+   * `MD_simulations/2_strip_water.sh`
+   * `MD_simulations/3_run_mmgbsa.sh`
+   * `MD_simulations/4_run_naccess.sh` (requires NACCESS)
+4. `scripts/AMBER_MMGBSA.ipynb` → generates feature tables (e.g., `rawdat.csv`)
+5. Model training and evaluation:
+   * `ML_models/ML_[model]/run_hyperopt.sh`
+   * `ML_models/ML_[model]/run_ML.sh`
+6. `scripts/process_results.ipynb`
+
+---
+
+## Additional documentation
+
+Additional step-by-step tutorial documents (Word/PDF) expanding on parts of the original pipeline are available here:
+
+**Protein–DNA Binding ML Tutorials (Google Drive):**  
+https://drive.google.com/drive/folders/1-VZr-uEI5vbdHhD7oE_DEY3p4iczt1As
+
+These documents cover:
+- gcPBM processing
+- Linear Regression, Random Forest, SVM, and Neural Network workflows
+- Sampling and stratification strategies
+- Model run scripts and preprocessing logic
+
+---
+
+## Citation
+
+If you use this tutorial repository, please cite the original work:
+
+```
+Al Masri C, Yu J. Combining Physics-Based Protein–DNA Energetics with Machine Learning to Predict Interpretable Transcription Factor-DNA Binding. ChemRxiv. 2025; doi:10.26434/chemrxiv-2025-mc5q4.
+```
+
 
 ---
 
@@ -136,32 +196,6 @@ These documents include:
 - Stratification and sampling tutorials
 - Model run scripts (RF, NN, etc.)
 - Expanded notes on logic and preprocessing steps
-
----
-
-## Citation
-
-If your work builds on this repository, please **cite both** the original preprint and this extension:
-
-**Original work:**
-
-```
-Al Masri C, Yu J. Combining Physics-Based Protein–DNA Energetics with Machine Learning to Predict Interpretable Transcription Factor-DNA Binding. ChemRxiv. 2025; doi:10.26434/chemrxiv-2025-mc5q4.
-```
-
-**This extension (time-dependent models & tutorials):**
-
-```
-Bansal N, Yu J (Group). Physics-Informed ML for Protein–DNA Binding: Time-Dependent Models and Reproducible Tutorials. GitHub repository, 2025. https://github.com/Nakshatra120/ML-Protein-DNA-Binding-Affinity
-```
-
-*(Replace with DOI/Zenodo badge if you mint one.)*
-
----
-
-## License & Attribution
-
-This repository preserves attribution to the original authors and scientific work. If the original project’s license applies to derivative works, this repository adheres to it and includes clear credit above. Please review the `LICENSE` file; if you use or redistribute substantial portions of either codebase, **credit both projects**.
 
 ---
 
