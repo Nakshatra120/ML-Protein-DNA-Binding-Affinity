@@ -291,6 +291,8 @@ These are spots where things look inconsistent or potentially buggy in the **non
 
 12. **Sample MD output (`MD_simulations/MycMax_TTTTTTTTTTTTTTGAGAAAATGAAGACAATTATCT/1/`)** contains only replicate 1, not the full 1–20 set. The notebook iterates `range(1, 21)` so 19 replicates will be silently skipped on a real rerun — fine for demo, just noting.
 
+13. **`keep_last_n_percent` never sorts by `run` in the canonical pipeline** (confirmed 2026-05-21). `torch_prep_kfold.py --initial_split` drops the `run` column right before saving `gbsa_<type>_scr<frac>_trn_final.csv`, so when `--process train` reloads and calls `keep_last_n_percent`, the `if "run" in df.columns:` branch is dead and the function falls through to operate on the post-shuffle order. Net effect: `keep_last_percent` keeps a deterministic *random* X% per sequence, not the equilibrated tail of each trajectory as the name implies. The published paper's models were trained with this latent behavior. Tutorial notebooks are intentionally bug-for-bug consistent (`tutorial notebooks/NN/bin_NN_tutorial.ipynb` has an inline markdown note about it). If anyone ever wants to actually keep the equilibrated tail, the fix is to retain `run` through to `--process train` and let the sort branch fire — but doing so will change all downstream model outputs.
+
 ---
 
 ## 7. Conventions
